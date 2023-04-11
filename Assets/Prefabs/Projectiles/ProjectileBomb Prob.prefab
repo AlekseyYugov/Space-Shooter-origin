@@ -50,6 +50,8 @@ MonoBehaviour:
   m_Damage: 100
   m_ImpactEffectPrefab: {fileID: 0}
   m_Timer: 0
+  m_SmallAsteroid: {fileID: 5798287227481659056, guid: 8c7d10d16a8cf834c912827f843fb82c, type: 3}
+  m_BigAsteroid: {fileID: 2548793278158452311, guid: 0325c0932ebc073498ac4b639e478112, type: 3}
 --- !u!1 &5279095914888569500
 GameObject:
   m_ObjectHideFlags: 0

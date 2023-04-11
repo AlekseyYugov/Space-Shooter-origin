@@ -68,7 +68,6 @@ namespace SpaceShooter
                 {
                     freezing = false;
                     m_Timer = 0;
-                    AddKill(-1);
                     Respawn();
                 }
             }

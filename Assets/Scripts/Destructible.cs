@@ -103,10 +103,7 @@ namespace SpaceShooter
             }
 
             //Player.AddKill(1);
-            if (gameObject.tag== "Enemy" && gameObject != m_SmallAsteroid && gameObject != m_BigAsteroid)
-            {
-                Player.AddKill(1);
-            }
+            
             Destroy(gameObject);
 
             if (m_IsBigAsteroid)

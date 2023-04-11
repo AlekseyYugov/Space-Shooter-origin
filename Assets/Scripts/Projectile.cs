@@ -13,6 +13,9 @@ namespace SpaceShooter
 
         [SerializeField] private float m_Timer;
 
+        [SerializeField] private GameObject m_SmallAsteroid;
+        [SerializeField] private GameObject m_BigAsteroid;
+
 
 
         private void Update()
@@ -34,6 +37,17 @@ namespace SpaceShooter
                     if (m_Parent == Player.Instance.ActiveShip || m_Parent == null)
                     {
                         Player.Instance.AddScore(dest.ScoreValue);
+                        if (dest.tag == "Enemy" && dest.name != "SmallAsteroid(Clone)" && dest.name != "Asteroid(Clone)")
+                        {
+                            Debug.Log(dest.name);
+                            if (dest.HitPoints == 0)
+                            {
+                                Player.AddKill(1);
+                                Debug.Log("!");
+                            }
+                            
+
+                        }
                     }
                 }
                 OnProjectileLifeEnd(hit.collider, hit.point);
