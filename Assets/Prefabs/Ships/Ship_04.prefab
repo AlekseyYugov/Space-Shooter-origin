@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 145393588561904577}
   m_Layer: 0
   m_Name: VisualModel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 1609327631}
   m_Layer: 0
   m_Name: Ship_04
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,7 +512,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Nickname: Ship 3
   m_IsBigAsteroid: 0
-  m_SmallAsteroid: {fileID: 0}
+  m_SmallAsteroid: {fileID: 5798287227481659056, guid: 8c7d10d16a8cf834c912827f843fb82c, type: 3}
+  m_BigAsteroid: {fileID: 2548793278158452311, guid: 0325c0932ebc073498ac4b639e478112, type: 3}
   m_EmpactEffect: {fileID: 7443761307784353800, guid: d31e8868ee20d964e9240377e8e67bb8, type: 3}
   m_Indestructible: 0
   m_Bonus: {fileID: 0}

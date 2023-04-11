@@ -12,6 +12,7 @@ namespace SpaceShooter
     {
         [SerializeField] private bool m_IsBigAsteroid;
         [SerializeField] private GameObject m_SmallAsteroid;
+        [SerializeField] private GameObject m_BigAsteroid;
 
 
 
@@ -88,7 +89,6 @@ namespace SpaceShooter
         {
 
             var ex = Instantiate(m_EmpactEffect, transform.position, Quaternion.identity);
-            var asteroid = gameObject.transform.position;
 
             if (Turret.m_DropBomb == true)
             {
@@ -102,9 +102,11 @@ namespace SpaceShooter
                 Turret.m_DropBomb = false;
             }
 
-
-            Player.AddKill(1);
-
+            //Player.AddKill(1);
+            if (gameObject.tag== "Enemy" && gameObject != m_SmallAsteroid && gameObject != m_BigAsteroid)
+            {
+                Player.AddKill(1);
+            }
             Destroy(gameObject);
 
             if (m_IsBigAsteroid)

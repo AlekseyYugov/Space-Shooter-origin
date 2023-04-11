@@ -31,8 +31,7 @@ namespace SpaceShooter
                 if (dest != null && dest != m_Parent)
                 {
                     dest.ApplyDamage(m_Damage);
-
-                    if (m_Parent == Player.Instance.ActiveShip)
+                    if (m_Parent == Player.Instance.ActiveShip || m_Parent == null)
                     {
                         Player.Instance.AddScore(dest.ScoreValue);
                     }

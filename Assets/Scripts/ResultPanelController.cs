@@ -46,6 +46,10 @@ namespace SpaceShooter
 
             Time.timeScale = 0;
 
+            if (PlayerStatistics.time <= 30)
+            {
+                ScoreStats.m_LastScore *= 2;
+            }
             m_Kills.text = "Kills : " + Player.NumKills.ToString();
             m_Score.text = "Score : " + ScoreStats.m_LastScore.ToString();
             m_Time.text = "Time : " + PlayerStatistics.time.ToString();

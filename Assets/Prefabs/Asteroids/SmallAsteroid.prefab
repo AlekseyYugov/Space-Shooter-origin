@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Nickname: 
   m_IsBigAsteroid: 0
   m_SmallAsteroid: {fileID: 5798287227481659056}
+  m_BigAsteroid: {fileID: 2548793278158452311, guid: 0325c0932ebc073498ac4b639e478112, type: 3}
   m_EmpactEffect: {fileID: 7443761307784353800, guid: d31e8868ee20d964e9240377e8e67bb8, type: 3}
   m_Indestructible: 0
   m_Bonus: {fileID: 0}

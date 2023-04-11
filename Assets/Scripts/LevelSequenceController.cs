@@ -73,10 +73,14 @@ namespace SpaceShooter
             //{
             //    SceneManager.LoadScene(CurrentEpisode.Levels[CurrentLevel]);
             //}
+            if (PlayerStatistics.time <= 30)
+            {
+                ScoreStats.m_LastScore *= 2;
+            }
             if (nextEpisode == episode_A)
             {
                 currentEpisode = episode_A;
-                nextEpisode = episode_B;
+                nextEpisode = episode_B;                
                 Records.FormRecords(LevelSequenceController.currentEpisode, Player.NumKills, ScoreStats.m_LastScore, PlayerStatistics.time);
                 SceneManager.LoadScene(episode_B.Levels[CurrentLevel]);
                 
