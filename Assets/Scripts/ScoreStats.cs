@@ -9,7 +9,7 @@ namespace SpaceShooter
     public class ScoreStats : MonoBehaviour
     {
         [SerializeField] private Text m_Text;
-        private int m_LastScore;
+        static public int m_LastScore;
 
         private void Update()
         {
@@ -18,16 +18,13 @@ namespace SpaceShooter
 
         private void UpdateScore()
         {
-            if (Player.Instance != null)
+            int currentScore = Player.Instance.Score;
+
+            if (m_LastScore != currentScore)
             {
-                int currentScore = Player.Instance.Score;
+                m_LastScore = currentScore;
 
-                if (m_LastScore != currentScore)
-                {
-                    m_LastScore = currentScore;
-
-                    m_Text.text = "Score: " + m_LastScore.ToString();
-                }
+                m_Text.text = "Score: " + m_LastScore.ToString();
             }
         }
     }

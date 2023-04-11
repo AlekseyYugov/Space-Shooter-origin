@@ -101,7 +101,12 @@ namespace SpaceShooter
 
                 Turret.m_DropBomb = false;
             }
+
+
+            Player.AddKill(1);
+
             Destroy(gameObject);
+
             if (m_IsBigAsteroid)
             {
                 var count = Random.Range(2, 5);

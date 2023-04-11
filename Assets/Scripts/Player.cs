@@ -29,6 +29,7 @@ namespace SpaceShooter
             if (m_Ship != null)
             {
                 Destroy(m_Ship.gameObject);
+                Debug.Log("!");
             }
         }
 
@@ -67,6 +68,7 @@ namespace SpaceShooter
                 {
                     freezing = false;
                     m_Timer = 0;
+                    AddKill(-1);
                     Respawn();
                 }
             }
@@ -98,11 +100,11 @@ namespace SpaceShooter
         #region Score
 
         public int Score { get; private set; }
-        public int NumKills { get; private set; }
+        static public int NumKills { get; set; }
 
-        public void AddKill()
+        static public void AddKill(int number)
         {
-            NumKills++;
+            NumKills+= number;
         }
         public void AddScore(int num)
         {

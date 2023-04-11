@@ -10,7 +10,7 @@ namespace SpaceShooter
     {
         bool IsCompleted { get; }
     }
-    public class LevelController : MonoBehaviour
+    public class LevelController : SingletonBase<LevelController>
     {
         
 
@@ -22,9 +22,11 @@ namespace SpaceShooter
 
         private ILevelCondition[] m_Conditions;
 
-        private bool m_IsLevelCOmpleted;
+        static public bool m_IsLevelCompleted;
         private float m_LevelTime;
         public float LevelTime => m_LevelTime;
+
+        ResultPanelController m_ResultPanelController;
 
         private void Start()
         {
@@ -32,12 +34,11 @@ namespace SpaceShooter
         }
         private void Update()
         {
-            if (m_IsLevelCOmpleted == false)
+            if (m_IsLevelCompleted == false)
             {
-                m_LevelTime += Time.deltaTime;
-
+                PlayerStatistics.time += Time.deltaTime;
                 CheckLevelConditions();
-            }
+            } 
         }
 
         private void CheckLevelConditions()
@@ -57,7 +58,7 @@ namespace SpaceShooter
             }
             if (numCompleted == m_Conditions.Length)
             {
-                m_IsLevelCOmpleted = true;
+                m_IsLevelCompleted = true;
                 m_EventLevelCompleted?.Invoke();
 
                 LevelSequenceController.Instance?.FinishCurrentLevel(true);
